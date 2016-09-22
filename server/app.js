@@ -9,7 +9,7 @@ var app = express();
 app.set('port', (process.env.port || 5000) );
 
 app.get('/*', function(req, res){
-  console.log('made it here!');
+  console.log('made it here!', req.params[0]);
   var file = req.params[0] || '/views/index.html';
   res.sendFile(path.join(__dirname,"/public/", file));
 });
